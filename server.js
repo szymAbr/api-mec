@@ -16,7 +16,7 @@ client.on("message", function message(data, isBinary) {
   console.log(message);
 });
 
-mongoose.connect(process.env.MONGODB_URL || "mongodb://localhost/api-mec", {
+mongoose.connect(MONGODB_URI, {
   useNewUrlParser: true,
 });
 const db = mongoose.connection;
