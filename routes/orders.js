@@ -2,7 +2,6 @@ const express = require("express");
 const router = express.Router();
 const Order = require("../models/order");
 
-// getting all
 router.get("/", async (req, res) => {
   try {
     const orders = await Order.find();
@@ -12,12 +11,10 @@ router.get("/", async (req, res) => {
   }
 });
 
-// getting one
 router.get("/:id", getOrder, (req, res) => {
   res.json(res.order);
 });
 
-// creating one
 router.post("/", async (req, res) => {
   const order = new Order({
     productId: req.body.productId,
